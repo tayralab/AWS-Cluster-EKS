@@ -68,6 +68,19 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    # states
+      - name: Install tools using asdf
+        uses: asdf-vm/actions/install@v2.2.0
+
+      - name: List changed stacks
+        id: list
+        run: |
+          echo "stdout<<STDOUT" >>$GITHUB_OUTPUT
+          terramate list --changed >>$GITHUB_OUTPUT
+          EXIT_CODE=$?
+          echo "STDOUT" >>$GITHUB_OUTPUT
+          exit ${EXIT_CODE}
+
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
