@@ -4,8 +4,7 @@ locals {
     Organization = "Infraestruture and Operations"
     Project      = "EKS"
     Environment  = "Development"
-    name         = "teste"
-    ambiente     = "teste2"
+
 
   }
 }
