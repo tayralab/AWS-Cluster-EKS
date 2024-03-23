@@ -5,6 +5,7 @@ locals {
     Project      = "EKS"
     Environment  = "Development"
     name         = "teste"
+    ambiente     = "teste2"
 
   }
 }
